@@ -17,7 +17,15 @@
 
 ## 怎么安装
 
-### 方式一：直接下载 zip
+### 最省事：让 AI 帮你装（推荐）
+
+把这句话发给 AI，它会自动下载并安装：
+
+```
+从这个地址下载并安装成 skill：https://github.com/Honey-YY/netdisk-skill-pack/releases/download/v1.0.0/netdisk-skill-pack.zip
+```
+
+### 手动下载
 
 **[点此下载 netdisk-skill-pack.zip](https://github.com/Honey-YY/netdisk-skill-pack/releases/download/v1.0.0/netdisk-skill-pack.zip)**（70 KB）
 
@@ -26,12 +34,13 @@
 - **Windows**：`C:\Users\你的用户名\.workbuddy\skills\`
 - **Mac / Linux**：`~/.workbuddy/skills/`
 
-### 方式二：直接 clone
+### 用 git clone
 
 ```bash
 git clone https://github.com/Honey-YY/netdisk-skill-pack.git
 # 然后把 skills/ 下的文件夹复制到你的 .workbuddy/skills/
 ```
+
 装完长这样：
 
 ```
