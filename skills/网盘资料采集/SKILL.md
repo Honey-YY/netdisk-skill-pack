@@ -94,9 +94,34 @@ http://thumbnail0.baidupcs.com/thumbnail/<md5>?...&size=c140_u90  | c360_u270  |
 
 ## 路径 4【兜底】客户端同步 —— 全量正文
 
-前三条都不满足需求时才用：让用户用云盘客户端把目录同步到本地，再解析PDF。
+路径 1/3/5 都不满足需求时才用：让用户用云盘客户端把目录同步到本地，再解析 PDF。
 
 **适用**：需要全量正文、深度精读、做精确引文。
+
+## 路径 5【最省事】让 AI 自己下载安装
+
+**适用场景**：把这个 skill 包分发给别人，让对方一句话就装好。
+
+GitHub Releases 的直链**无需登录即可下载**（实测 HTTP 200，anonymous access 开启），所以可以让 AI 代劳：
+
+```
+从这个地址下载并安装成 skill：https://github.com/<owner>/<repo>/releases/download/<tag>/<file>.zip
+```
+
+AI 收到后会：curl 下载 → 解压 → 把技能文件夹放进 `~/.workbuddy/skills/` → 告知安装位置。
+
+**验证过这个链接可匿名下载**：
+```bash
+curl -sL -o test.zip "https://github.com/.../releases/download/v1.0.0/pkg.zip" -w "%{http_code} %{size_download}"
+# 实测：200 70043 application/octet-stream
+```
+
+**给用户的最佳实践**：不要让用户手动点链接下载再上传，那要多动好几步。**直接给一句可复制的指令**，让 AI 自己下载安装。
+
+**注意事项**：
+- 资产名用**英文**，`gh release create` 会把中文资产名截断（实测 `资料蒸馏Skill包.zip` → `Skill.zip`）
+- 二进制文件不要走 git push（68 KB 传了 4 分钟超时），用 Release 资产
+- 装完后让用户说一句触发词验证，比让用户检查文件是否存在更直观
 
 # 关键陷阱：排序不是按业务主键
 
