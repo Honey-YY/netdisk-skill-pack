@@ -19,7 +19,9 @@
 
 ### 方式一：直接下载 zip
 
-[下载 zip](https://github.com/Honey-YY/netdisk-skill-pack/archive/refs/heads/main.zip)，解压后把 `skills` 文件夹里的两个文件夹复制到：
+**[点此下载 netdisk-skill-pack.zip](https://github.com/Honey-YY/netdisk-skill-pack/releases/download/v1.0.0/netdisk-skill-pack.zip)**（70 KB）
+
+解压后把 `skills` 文件夹里的两个文件夹复制到：
 
 - **Windows**：`C:\Users\你的用户名\.workbuddy\skills\`
 - **Mac / Linux**：`~/.workbuddy/skills/`
@@ -30,7 +32,6 @@
 git clone https://github.com/Honey-YY/netdisk-skill-pack.git
 # 然后把 skills/ 下的文件夹复制到你的 .workbuddy/skills/
 ```
-
 装完长这样：
 
 ```
